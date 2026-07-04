@@ -1,0 +1,243 @@
+:root {
+  --ink: #1c2530;
+  --muted: #667484;
+  --bg: #f3f5f8;
+  --card: #ffffff;
+  --line: #dde3ea;
+  --accent: #1f5eff;
+  --accent-dark: #1747c2;
+  --danger: #c02b2b;
+  --ok: #1a7f4b;
+  --paper: #fffdf8;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+/* ---------- chrome ---------- */
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  background: var(--card);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.brand { font-weight: 700; font-size: 18px; cursor: pointer; }
+.brand-mark {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 6px;
+  width: 24px; height: 24px;
+  text-align: center; line-height: 24px;
+  margin-right: 6px;
+  font-size: 14px;
+}
+.brand-tag { font-size: 12px; font-weight: 400; color: var(--muted); margin-left: 10px; }
+
+.nav-btn {
+  background: none; border: none;
+  font-size: 14px; color: var(--ink);
+  padding: 8px 12px; cursor: pointer; border-radius: 8px;
+}
+.nav-btn:hover { background: var(--bg); }
+
+.footbar {
+  max-width: 900px; margin: 40px auto 24px; padding: 0 24px;
+  font-size: 12px; color: var(--muted); text-align: center;
+}
+
+/* ---------- layout ---------- */
+
+.screen { max-width: 900px; margin: 0 auto; padding: 24px; }
+.screen.narrow { max-width: 640px; }
+
+.hero { text-align: center; padding: 32px 0 16px; }
+.hero h1 { font-size: 28px; margin-bottom: 8px; }
+.hero p { color: var(--muted); max-width: 560px; margin: 0 auto 20px; }
+
+.section-h { font-size: 15px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin: 32px 0 12px; }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px 18px;
+}
+
+.demo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 700px) { .demo-grid { grid-template-columns: 1fr; } }
+.demo-card h3 { margin: 0 0 6px; font-size: 15px; }
+.demo-card p { margin: 0 0 12px; font-size: 13px; color: var(--muted); }
+
+.meeting-list { display: flex; flex-direction: column; gap: 10px; }
+.meeting-row { display: flex; justify-content: space-between; align-items: center; }
+.meeting-row .muted { display: block; font-size: 12px; }
+.row-actions { display: flex; gap: 8px; }
+
+.muted { color: var(--muted); }
+.small { font-size: 12px; }
+
+/* ---------- buttons ---------- */
+
+.btn {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 14px;
+  cursor: pointer;
+  color: var(--ink);
+}
+.btn:hover { border-color: var(--accent); color: var(--accent); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+.btn.primary:hover { background: var(--accent-dark); color: #fff; }
+.btn.primary:disabled { background: #9db4e8; border-color: #9db4e8; cursor: not-allowed; }
+.btn.big { padding: 12px 22px; font-size: 16px; }
+.btn.danger-ghost { color: var(--danger); }
+.btn.danger-ghost:hover { border-color: var(--danger); }
+
+/* ---------- forms / setup ---------- */
+
+.form-card { margin-bottom: 14px; }
+.form-card h3 { margin: 0 0 10px; font-size: 15px; }
+.form-card label { display: block; font-size: 13px; font-weight: 600; margin: 10px 0; }
+.form-card input[type="text"], .form-card input[type="date"], .form-card select {
+  display: block; width: 100%;
+  margin-top: 4px; padding: 9px 10px;
+  border: 1px solid var(--line); border-radius: 8px;
+  font-size: 14px; font-weight: 400;
+  background: #fff;
+}
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+.file-drop {
+  display: block;
+  border: 2px dashed var(--line);
+  border-radius: 10px;
+  padding: 18px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 400 !important;
+  color: var(--muted);
+}
+.file-drop:hover { border-color: var(--accent); color: var(--accent); }
+.or { text-align: center; color: var(--muted); font-size: 12px; margin: 8px 0; }
+
+.file-status { font-size: 13px; min-height: 18px; }
+.file-status.ok { color: var(--ok); }
+.file-status.error { color: var(--danger); }
+
+.consent-card { border-left: 4px solid #e0a437; margin-bottom: 14px; }
+.consent-card h3 { margin: 0 0 8px; font-size: 15px; }
+.consent-card p { font-size: 13px; color: var(--muted); margin: 0 0 12px; }
+.consent-check { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; font-weight: 600; cursor: pointer; }
+.consent-check input { margin-top: 3px; width: 16px; height: 16px; }
+
+.setup-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 8px; }
+
+/* ---------- processing ---------- */
+
+.processing h1 { text-align: center; }
+.steps { list-style: none; padding: 0; max-width: 420px; margin: 24px auto; }
+.steps li { padding: 10px 0 10px 32px; position: relative; color: var(--muted); }
+.steps li::before {
+  content: ''; position: absolute; left: 4px; top: 13px;
+  width: 14px; height: 14px; border-radius: 50%;
+  border: 2px solid var(--line);
+}
+.steps li.done { color: var(--ink); }
+.steps li.done::before { content: '✓'; border-color: var(--ok); background: var(--ok); color: #fff; font-size: 10px; line-height: 14px; text-align: center; }
+
+.error-card { border-left: 4px solid var(--danger); margin: 16px 0; }
+
+/* ---------- review ---------- */
+
+.review-toolbar {
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  flex-wrap: wrap; margin-bottom: 12px;
+}
+.stats { display: flex; gap: 6px; flex-wrap: wrap; }
+.chip {
+  background: var(--card); border: 1px solid var(--line);
+  border-radius: 999px; padding: 3px 10px; font-size: 12px; color: var(--muted);
+}
+.toolbar-actions { display: flex; gap: 8px; }
+
+.draft-note { font-size: 13px; color: var(--muted); margin: 0 0 14px; }
+
+/* the minutes document itself — deliberately "paper"-like */
+.minutes-doc {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  box-shadow: 0 2px 12px rgba(20, 30, 45, 0.08);
+  padding: 56px 64px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 15px;
+  color: #15181c;
+  outline: none;
+}
+.minutes-doc:focus { box-shadow: 0 2px 12px rgba(31, 94, 255, 0.18); }
+@media (max-width: 700px) { .minutes-doc { padding: 28px 22px; } }
+
+.minutes-doc h1 { font-size: 22px; text-align: center; margin: 0 0 4px; }
+.minutes-doc .doc-sub { text-align: center; font-weight: 700; margin: 0; }
+.minutes-doc .doc-sub2 { text-align: center; color: #555; margin: 2px 0 8px; }
+.minutes-doc h2 {
+  font-size: 16px; margin: 26px 0 8px;
+  border-bottom: 1px solid #c9c2b4; padding-bottom: 3px;
+}
+.minutes-doc p { margin: 8px 0; line-height: 1.55; }
+.minutes-doc .motion {
+  background: #f4f1e9; border-left: 3px solid #6b6353;
+  padding: 10px 14px; border-radius: 0 4px 4px 0;
+}
+.minutes-doc .verbatim { font-style: italic; }
+.minutes-doc .no-action { color: #555; }
+.minutes-doc .needs-review { color: var(--danger); font-weight: 700; }
+.minutes-doc table.actions { border-collapse: collapse; width: 100%; margin: 10px 0; }
+.minutes-doc table.actions th, .minutes-doc table.actions td {
+  border: 1px solid #b9b2a3; padding: 7px 10px; text-align: left; font-size: 13.5px;
+}
+.minutes-doc table.actions th { background: #efece3; }
+.minutes-doc .signature { margin-top: 40px; }
+.minutes-doc .sig-line { border-bottom: 1px solid #15181c; width: 260px; height: 22px; }
+.minutes-doc .approval { margin-top: 18px; }
+
+/* raw transcript: an audit artifact, visually secondary and collapsed by default */
+.transcript-ref { margin-top: 22px; }
+.transcript-ref summary {
+  cursor: pointer; color: var(--muted); font-size: 13px;
+  padding: 10px 14px; background: var(--card);
+  border: 1px solid var(--line); border-radius: 10px;
+}
+.transcript-lines {
+  background: var(--card); border: 1px solid var(--line); border-top: none;
+  border-radius: 0 0 10px 10px;
+  max-height: 380px; overflow-y: auto;
+  padding: 14px 18px; font-size: 13px; color: var(--muted);
+}
+.transcript-lines strong { color: var(--ink); }
+
+/* ---------- print (PDF export fallback: printing the review page) ---------- */
+
+@media print {
+  .topbar, .footbar, .review-toolbar, .draft-note, .transcript-ref { display: none !important; }
+  body { background: #fff; }
+  .screen { max-width: none; padding: 0; }
+  .minutes-doc { border: none; box-shadow: none; padding: 0; }
+}

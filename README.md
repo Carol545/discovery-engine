@@ -1,3 +1,6 @@
+> This repo also contains **[MinuteMaker](minutemaker/README.md)** — an AI board-minutes
+> generator for nonprofit and HOA boards, in [minutemaker/](minutemaker/).
+
 # Discovery Engine
 
 A swipe-feed music discovery app — "Bloomberg Terminal for emerging music." It optimizes

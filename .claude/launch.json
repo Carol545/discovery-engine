@@ -6,6 +6,12 @@
       "runtimeExecutable": "python",
       "runtimeArgs": ["-m", "http.server", "5173"],
       "port": 5173
+    },
+    {
+      "name": "minutemaker",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "5199"],
+      "port": 5199
     }
   ]
 }
