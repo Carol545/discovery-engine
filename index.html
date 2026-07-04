@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Discovery Engine</title>
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">DISCOVERY<span>ENGINE</span></div>
+    <nav class="tabs" id="tabs"></nav>
+  </header>
+
+  <div class="subbar" id="subFilterBar" hidden>
+    <div class="subfilter-chips" id="subFilterChips"></div>
+  </div>
+
+  <main id="stage">
+    <div class="card-stack" id="cardStack"></div>
+    <div class="empty-state" id="emptyState" hidden>
+      <p>You've reached the end of this feed.</p>
+      <button id="resetFeedBtn" class="ghost-btn">Restart feed</button>
+    </div>
+  </main>
+
+  <section class="saved-view" id="savedView" hidden>
+    <h2>Saved</h2>
+    <div class="saved-grid" id="savedGrid"></div>
+    <p class="saved-empty" id="savedEmpty" hidden>Nothing saved yet — swipe right on something you like.</p>
+  </section>
+
+  <footer class="controls" id="controls">
+    <button class="ctrl-btn skip" id="skipBtn" title="Skip">&#10005;</button>
+    <button class="ctrl-btn play" id="playBtn" title="Play/Pause">&#9658;</button>
+    <button class="ctrl-btn save" id="saveBtn" title="Save">&#9825;</button>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
